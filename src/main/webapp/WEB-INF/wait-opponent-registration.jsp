@@ -5,6 +5,7 @@
     <meta http-equiv="refresh" content="3">
 </head>
 <body>
-<h1>Please wait</h1>
+<h1>Hello, ${playerManager.player.name}!</h1>
+<h2>Please wait for opponent </h2>
 </body>
 </html>

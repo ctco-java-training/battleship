@@ -2,8 +2,10 @@ package lv.ctco.battleship.model;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.Serializable;
 
+@Named
 @SessionScoped
 public class PlayerManager implements Serializable {
     private static final long serialVersionUID = 1;

@@ -23,7 +23,7 @@ public class WaitOpponentRegistrationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Game game = playerManager.getGame();
         if (game.isComplete()) {
-            response.sendRedirect("placement.jsp");
+            response.sendRedirect(request.getContextPath() + "/placement.jsp");
         } else {
             request.getRequestDispatcher("/WEB-INF/wait-opponent-registration.jsp")
                     .include(request, response);

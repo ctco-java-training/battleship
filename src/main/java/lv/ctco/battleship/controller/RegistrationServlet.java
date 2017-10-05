@@ -21,7 +21,7 @@ public class RegistrationServlet extends HttpServlet {
         Player player = new Player();
         player.setName(username);
         playerManager.registerPlayer(player);
-        response.sendRedirect("wait-opponent-registration");
+        response.sendRedirect(request.getContextPath() + "/wait-opponent-registration");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

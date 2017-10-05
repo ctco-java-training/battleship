@@ -6,6 +6,7 @@ public class Player implements Serializable {
     private static final long serialVersionUID = 1;
 
     private String name;
+    private final Field myField = new Field();
 
     public String getName() {
         return name;
@@ -13,6 +14,10 @@ public class Player implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Field getMyField() {
+        return myField;
     }
 
     @Override

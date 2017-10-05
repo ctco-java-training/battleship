@@ -15,14 +15,14 @@ public class GameManager implements Serializable {
     public synchronized Game registerPlayer(Player player) {
         if (incompleteGame == null) {
             incompleteGame = new Game();
-            logger.log(Level.INFO, "No incomplete games found, creating for user {0}", player);
+            logger.log(Level.FINE, "No incomplete games found, creating for user {0}", player);
             incompleteGame.setPlayer1(player);
             return incompleteGame;
         } else {
             incompleteGame.setPlayer2(player);
             Game completeGame = incompleteGame;
             incompleteGame = null;
-            logger.log(Level.INFO, "Completeng game {0}", completeGame);
+            logger.log(Level.FINE, "Completeng game {0}", completeGame);
             return completeGame;
         }
     }
