@@ -7,6 +7,7 @@ public class Player implements Serializable {
 
     private String name;
     private final Field myField = new Field();
+    private boolean placementComplete;
 
     public String getName() {
         return name;
@@ -25,5 +26,13 @@ public class Player implements Serializable {
         return "Player{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    public boolean isPlacementComplete() {
+        return placementComplete;
+    }
+
+    public void setPlacementComplete(boolean placementComplete) {
+        this.placementComplete = placementComplete;
     }
 }

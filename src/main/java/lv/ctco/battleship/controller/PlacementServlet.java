@@ -53,6 +53,7 @@ public class PlacementServlet extends HttpServlet {
         if (error) {
             request.getRequestDispatcher("/placement.jsp").include(request, response);
         } else {
+            player.setPlacementComplete(true);
             response.sendRedirect(request.getContextPath() + "/wait-opponent-ships");
         }
 

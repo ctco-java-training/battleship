@@ -28,6 +28,13 @@ public class Game implements Serializable {
         return player1 != null && player2 != null;
     }
 
+    public boolean isStarted() {
+        return player1 != null
+                && player2 != null
+                && player1.isPlacementComplete()
+                && player2.isPlacementComplete();
+    }
+
     @Override
     public String toString() {
         return "Game{" +
