@@ -7,6 +7,7 @@ public class Player implements Serializable {
 
     private String name;
     private final Field myField = new Field();
+    private final Field oppositeField = new Field();
     private boolean placementComplete;
 
     public String getName() {
@@ -19,6 +20,10 @@ public class Player implements Serializable {
 
     public Field getMyField() {
         return myField;
+    }
+
+    public Field getOppositeField() {
+        return oppositeField;
     }
 
     @Override
