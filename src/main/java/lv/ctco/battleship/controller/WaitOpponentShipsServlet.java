@@ -16,8 +16,8 @@ import java.io.IOException;
  * @version 1.0
  * @since 1.0
  */
-@WebServlet(name = "WaitOpponentPlacementServlet", urlPatterns = "/wait-opponent-ships")
-public class WaitOpponentPlacementServlet extends HttpServlet {
+@WebServlet(name = "WaitOpponentShipsServlet", urlPatterns = "/wait-opponent-ships")
+public class WaitOpponentShipsServlet extends HttpServlet {
 
     @Inject
     private PlayerManager playerManager;
