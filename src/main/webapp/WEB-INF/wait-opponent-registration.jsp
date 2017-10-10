@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>Hello, ${playerManager.player.name}!</h1>
-<h2>Please wait for opponent </h2>
+<h2>Please wait for opponent</h2>
 </body>
 </html>
