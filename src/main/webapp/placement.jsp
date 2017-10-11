@@ -15,8 +15,15 @@
 </c:if>
 <form method="post" action="<c:url value="/placement"/>">
     <table>
+        <tr>
+            <td></td>
+            <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
+                <td>${col}</td>
+            </c:forEach>
+        </tr>
         <c:forEach var="row" items="1,2,3,4,5,6,7,8,9,10">
             <tr>
+                <td>${row}</td>
                 <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
                     <c:set var="addr" value="${col}${row}"/>
                     <td>
