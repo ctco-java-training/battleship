@@ -26,7 +26,9 @@ public class EndOfGameServlet extends HttpServlet {
         Player winnerPlayer = playerManager.getGame().getWinner();
 
         if (sessionPlayer == winnerPlayer) {
-
+            request.getRequestDispatcher("/WEB-INF/winner.jsp").include(request, response);
+        } else {
+            request.getRequestDispatcher("/WEB-INF/looser.jsp").include(request, response);
         }
 
     }
