@@ -7,6 +7,20 @@ public class Game implements Serializable {
 
     private Player player1;
     private Player player2;
+    private boolean player1turn = true;
+    private Player winner;
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public Player getCurrentPlayer() {
+        return player1turn ? player1 : player2;
+    }
+
+    public Player getOppositePlayer() {
+        return player1turn ? player2 : player1;
+    }
 
     public Player getPlayer1() {
         return player1;
@@ -41,5 +55,39 @@ public class Game implements Serializable {
                 "player1=" + player1 +
                 ", player2=" + player2 +
                 '}';
+    }
+
+    public void fire(String addr) {
+        Player current = getCurrentPlayer();
+        Player opposite = getOppositePlayer();
+        CellContent fired = opposite.getMyField().get(addr);
+        if (fired == CellContent.SHIP) {
+            current.getOpponentField().set(addr, CellContent.HIT);
+            opposite.getMyField().set(addr, CellContent.HIT);
+            checkWinner();
+        } else if (fired == CellContent.EMPTY) {
+            current.getOpponentField().set(addr, CellContent.MISS);
+            opposite.getMyField().set(addr, CellContent.MISS);
+            player1turn = !player1turn;
+        } else {
+            player1turn = !player1turn;
+        }
+
+    }
+
+    private void checkWinner() {
+        Player opposite = getOppositePlayer();
+//        Collection<CellContent> cells = opposite.getMyField().getContent().values();
+//        for (CellContent c : cells) {
+//            if (c == CellContent.SHIP) {
+//                return;
+//            }
+//        }
+//        winner = getCurrentPlayer();
+
+        if (!opposite.getMyField().getContent().containsValue(CellContent.SHIP)) {
+            winner = getCurrentPlayer();
+        }
+
     }
 }
