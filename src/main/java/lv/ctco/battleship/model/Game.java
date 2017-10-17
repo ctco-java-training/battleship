@@ -9,9 +9,14 @@ public class Game implements Serializable {
     private Player player2;
     private boolean player1turn = true;
     private Player winner;
+    private boolean cancelled;
 
     public Player getWinner() {
         return winner;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
     }
 
     public Player getCurrentPlayer() {
@@ -47,6 +52,15 @@ public class Game implements Serializable {
                 && player2 != null
                 && player1.isPlacementComplete()
                 && player2.isPlacementComplete();
+    }
+
+
+    public boolean isCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
     }
 
     @Override

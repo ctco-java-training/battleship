@@ -1,5 +1,6 @@
 package lv.ctco.battleship.model;
 
+import javax.annotation.PreDestroy;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,6 +16,11 @@ public class PlayerManager implements Serializable {
 
     private Player player;
     private Game game;
+
+    @PreDestroy
+    public void cancelGame() {
+        game.setCancelled(true);
+    }
 
     public Player getPlayer() {
         return player;
