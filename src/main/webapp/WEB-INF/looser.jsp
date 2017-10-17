@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Battleship</title>
-    <meta http-equiv="refresh" content="3">
 </head>
 <body>
 <h1>Sorry, ${playerManager.player.name}!</h1>
